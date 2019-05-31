@@ -55,7 +55,12 @@ a good pool operator. For starters be sure to read:
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
 ```bash
-sudo apt-get install build-essential libsodium-dev npm libboost-all-dev
+# For Fedora
+sudo dnf -y install npm libsodium-devel boost-devel
+sudo dnf -y groupinstall "C Development Tools and Libraries"
+sudo dnf -y groupinstall "Development Tools"
+# For Ubuntu / Debian
+# sudo apt-get install build-essential libsodium-dev npm libboost-all-dev
 sudo npm install n -g
 sudo n stable
 git clone https://github.com/EvilRedHorse/s-nomp.git s-nomp
