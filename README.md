@@ -3,7 +3,7 @@
 > *NOTE*:
 > We're working on putting together an "official" s-nomp which can be supported by many coins and pools instead of so many running their own flavors. More to come!
 
-This is a Equihash mining pool based off Node Open Mining Portal.
+This is a Equihash mining pool based off Node Open Mining Portal - forked for votecoin.
 
 #### Production Usage Notice
 This is beta software. All of the following are things that can change and break an existing s-nomp setup: functionality of any feature, structure of configuration files and structure of redis data. If you use this software in production then *DO NOT* pull new code straight into production usage because it can and often will break your setup and require you to tweak things like config files or redis data. *Only tagged releases are considered stable.*
@@ -59,8 +59,10 @@ Clone the repository and run `npm update` for all the dependencies to be install
 sudo dnf -y install npm libsodium-devel boost-devel
 sudo dnf -y groupinstall "C Development Tools and Libraries"
 sudo dnf -y groupinstall "Development Tools"
+
 # For Ubuntu / Debian
 # sudo apt-get install build-essential libsodium-dev npm libboost-all-dev
+
 sudo npm install n -g
 sudo n stable
 git clone https://github.com/EvilRedHorse/s-nomp.git s-nomp
