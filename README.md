@@ -35,9 +35,9 @@ you are using - a good place to start with redis is [data persistence](http://re
 Follow the build/install instructions for your coin daemon. Your coin.conf file should end up looking something like this:
 ```
 daemon=1
-rpcuser=zclassicrpc
+rpcuser=votecoin_rpc
 rpcpassword=securepassword
-rpcport=8232
+rpcport=8242
 ```
 For redundancy, its recommended to have at least two daemon instances running in case one drops out-of-sync or offline,
 all instances will be polled for block/transaction updates and be used for submitting blocks. Creating a backup daemon
@@ -58,14 +58,14 @@ Clone the repository and run `npm update` for all the dependencies to be install
 sudo apt-get install build-essential libsodium-dev npm libboost-all-dev
 sudo npm install n -g
 sudo n stable
-git clone https://github.com/s-nomp/s-nomp.git s-nomp
+git clone https://github.com/EvilRedHorse/s-nomp.git s-nomp
 cd s-nomp
 npm update
 npm install
 ```
 
 ##### Pool config
-Take a look at the example json file inside the `pool_configs` directory. Rename it to `zclassic.json` and change the
+Take a look at the example json file inside the `pool_configs` directory. Rename it to `votecoin.json` and change the
 example fields to fit your setup.
 
 ```
@@ -83,7 +83,7 @@ ie: Miner 1 mines at 0.1 difficulty and finds 10 shares, the pool sees it as 1 s
 ```
 node [path to cli.js] [coin name in config] [block hash symbol]
 ```
-Example: inside `zclassic.conf` add the line
+Example: inside `votecoin.conf` add the line
 ```
 blocknotify=node /home/user/s-nomp/scripts/cli.js blocknotify zclassic %s
 ```
