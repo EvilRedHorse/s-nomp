@@ -85,7 +85,7 @@ node [path to cli.js] [coin name in config] [block hash symbol]
 ```
 Example: inside `votecoin.conf` add the line
 ```
-blocknotify=node /home/user/s-nomp/scripts/cli.js blocknotify zclassic %s
+blocknotify=node /home/user/s-nomp/scripts/cli.js blocknotify votecoin %s
 ```
 
 Alternatively, you can use a more efficient block notify script written in pure C. Build and usage instructions
