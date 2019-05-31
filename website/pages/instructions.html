@@ -1,0 +1,36 @@
+<div style="margin: 18px;">
+    Instructions
+<!--
+<ul>
+<li><a href="/api/stats">/stats</a> global pool stats</li>
+<li><a href="/api/blocks">/stats</a> global block stats</li>
+<li><a href="/api/pool_stats">/pool_stats</a> - historical stats</li>
+<li><a href="/api/payments">/payments</a> - payment history</li>
+<li><a href="/api/worker_stats?taddr">/worker_stats?taddr</a> - historical time per pool json </li>
+<li><a href="/api/live_stats">/live_stats</a> - live stats </li>
+
+</ul>
+-->
+
+<caption>
+Fedora Instructions (Nvidia):
+
+# Install RPM Fusion
+su -c "dnf -y install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm"
+
+# Install Drivers and Libraries
+su -c "dnf -y install akmod-nvidia xorg-x11-drv-nvidia kmod-nvidia "kernel-devel-uname-r == $(uname -r)" xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-libs.i686 xorg-x11-drv-nvidia-libs vdpauinfo libva-vdpau-driver libva-utils libcurl-devel openssl-devel libGLU-devel libXi-devel libXmu-devel"
+su -c "dnf -y groupinstall 'C Development Tools and Libraries'"
+
+# Copy and extract ewbf-miner to users Downloads folder
+wget -qO- https://github.com/nanopool/ewbf-miner/releases/download/v0.3.4b/Zec.miner.0.3.4b.Linux.Bin.tar.gz | tar xvz -C ~/Downloads
+
+# reboot to allow kernel module to load
+su -c "reboot"
+
+# start miner
+~/Downloads/miner --eexit 1 --solver 0 --server pool.equihash.ca --port [coin-port] --user [wallet-address] --pass none
+</caption>
+<caption>
+ASIC Equihash miners are available, starting perhaps with a simple Z9-mini, it has a suprisingly low power consumption, rated at ~300W, actual Wattage at the Wall may be higher/lower depending on the length of the 12V DC wires and overclocking/underclocking</caption>
+</div>
